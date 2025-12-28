@@ -1,0 +1,219 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+    background-color: #5b4f96;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.form-container, .card-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #555;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333; /* Label color */
+}
+
+form input {
+    width: calc(100% - 20px);
+    padding: 10px; /* Increased padding for better touch targets */
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border and background color */
+}
+
+form input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+form input.error {
+    border-color: red; /* Change border color on error */
+    background-color: #ffe6e6; /* Light red background for error */
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+.card-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    flex-grow: 1; /* Allow the card container to grow */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    background-color: #f5f5f5; /* Default background color */
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    min-width: 200px; /* Minimum width */
+    max-width: 100%; /* Maximum width */
+    width: auto; /* Allow width to adjust based on content */
+    flex-grow: 1; /* Allow cards to grow if needed */
+    height: auto; /* Allow height to adjust based on content */
+}
+
+#qrcode {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 150px; /* Set a minimum height for the QR code container */
+    width: 100%; /* Ensure it takes full width of the card */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+#qrcode {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card p i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #484a4b; /* Icon color */
+    font-size: 20px; /* Icon size */
+}
+
+.card-flex {
+    display: flex;
+    justify-content: flex-end; /* Aligns the child elements to the right */
+    align-items: center; /* Vertically centers the elements */
+    padding: 15px; /* Adjusts the padding inside the card */
+}
+
+.profile-pic {
+    width: 80px; /* Decreased width of the profile picture */
+    height: 80px; /* Decreased height of the profile picture */
+    border-radius: 50%; /* Keeps the image round */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 3px solid #fff; /* Optional: Adds a white border around the image */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow to the image */
+}
+
+.logo-pic {
+    width: 120px; /* Increased width of the logo */
+    height: 120px; /* Increased height of the logo */
+    object-fit: contain; /* Ensures the logo fits inside the area without distortion */
+    margin-left: 15px; /* Spacing to the left of the logo */
+}
+
+/* Other existing CSS remains unchanged */
+
+#imgBox {
+    width: 500px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+#imgBox img {
+    width: 100%;
+    padding: 10px;
+}
+
+#imgBox.show-img {
+    max-height: 300px;
+    margin: 10px auto;
+    border: 1px solid #d1d1d1;
+}
+
+form input[type="color"] {
+    padding: 0; /* Remove padding for color input */
+    border: none; /* Remove border */
+    width: 100%; /* Full width */
+    height: 40px; /* Height for color input */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+form input[type="file"] {
+    border: none; /* Remove border */
+    padding: 10px; /* Add padding */
+    background-color: #f5f5f5; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+form input[type="file"]:hover {
+    background-color: #eaeaea; /* Change background on hover */
+}
+
+

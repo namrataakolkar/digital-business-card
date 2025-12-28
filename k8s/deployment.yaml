@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: digital-card
+  namespace: roll_2401002     # 🔴 CHANGE TO YOUR ROLL NO
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: digital-card
+  template:
+    metadata:
+      labels:
+        app: digital-card
+    spec:
+      containers:
+      - name: digital-card
+        image: REGISTRY_URL/digital-card:BUILD_TAG
+        ports:
+        - containerPort: 80
