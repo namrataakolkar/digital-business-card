@@ -2,17 +2,19 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: digital-card-ingress
-  namespace: roll_2401002
+  namespace: 2401002
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
-  - host: digital-card-roll2401002.imcc.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: digital-card-service
-            port:
-              number: 80
-              
+    - host: 2401002.imcc.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: digital-card-service
+                port:
+                  number: 80

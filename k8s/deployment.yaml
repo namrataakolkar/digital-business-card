@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: digital-card
-  namespace: roll_2401002     # 🔴 CHANGE TO YOUR ROLL NO
+  namespace: 2401002
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: digital-card
@@ -13,8 +13,10 @@ spec:
       labels:
         app: digital-card
     spec:
+      imagePullSecrets:
+        - name: nexus-secret
       containers:
-      - name: digital-card
-        image: REGISTRY_URL/digital-card:BUILD_TAG
-        ports:
-        - containerPort: 80
+        - name: digital-card
+          image: nexus-service-for-docker-hosted-registry.nexus.svc.cluster.local:8085/project-namespace/digital-card:latest
+          ports:
+            - containerPort: 80
